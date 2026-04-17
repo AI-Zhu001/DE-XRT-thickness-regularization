@@ -37,7 +37,7 @@ pip install -r requirements.txt
 ```
 
 ##  📊 Dataset
-The original dataset contains 7,245 dual‑energy X‑ray images (2,806 copper, 4,439 waste). Due to proprietary restrictions, the full dataset cannot be publicly released. A synthetic/miniature dataset is provided in data/ to demonstrate the data structure and allow code execution for testing.
+The original dataset contains 7,245 dual‑energy X‑ray images (2,806 copper, 4,439 waste). Due to proprietary restrictions, the full dataset cannot be publicly released. A **small subset (2 images per class per channel)** of the original data is provided in `data/` to demonstrate the data structure and allow code execution for testing. This subset is not sufficient to reproduce the full paper results but serves as a template for organizing your own data.
 
 ### Data Preparation
 Organize your dataset as:
