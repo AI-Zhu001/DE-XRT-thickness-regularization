@@ -59,9 +59,6 @@ Generate CSV splits and thickness group annotations:
 python copper_dataset_split.py --root /path/to/dataset --output-dir split_outputs
 ```
 
-```bash
-python copper_dataset_split.py --root /path/to/dataset --output-dir split_outputs
-```
 This creates copper_xray_all_splits.csv with columns: sample_id, label, high_path, low_path, mean_gray, thickness_group, split (train/val/test), and cross‑split columns.
 
 ### Data Format
