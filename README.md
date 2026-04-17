@@ -67,7 +67,7 @@ Thickness groups (thin/medium/thick) are defined by sorting samples by mean gray
 All ResNet experiments are run for 20 epochs with batch size 32, using AdamW optimizer (lr = 1e‑4, weight decay = 1e‑4).
 
 1. Baseline (no augmentation)
-
+```bash
 python train_resnet_brightness_control.py \
     --csv-path split_outputs/copper_xray_all_splits.csv \
     --data-root /path/to/dataset \
@@ -80,9 +80,9 @@ python train_resnet_brightness_control.py \
     --ckpt-path checkpoints/baseline.pth \
     --pretrained \
     --seed 0
-    
+ ```      
 2. Brightness Augmentation (empirical baseline)
-
+```bash
 python train_resnet_brightness_control.py \
     --csv-path split_outputs/copper_xray_all_splits.csv \
     --data-root /path/to/dataset \
@@ -99,9 +99,9 @@ python train_resnet_brightness_control.py \
     --ckpt-path checkpoints/brightness.pth \
     --pretrained \
     --seed 0
-    
+```       
 3. Proposed Thickness Consistency Regularization
-
+```bash
 python train_resnet_consistency.py \
     --csv-path split_outputs/copper_xray_all_splits.csv \
     --data-root /path/to/dataset \
@@ -120,12 +120,12 @@ python train_resnet_consistency.py \
     --ckpt-path checkpoints/consistency.pth \
     --pretrained \
     --seed 0
-    
+```     
 Multi‑seed experiments: In our paper, each method was trained with 5 different random seeds. The command above shows an example with --seed 0. To reproduce the full results, run the same command with multiple distinct seeds (you may choose any set of 5 seeds) and average the results. For Swin‑Transformer, a batch script run_swin_5seeds.sh is provided.
 
 4. Evaluation
 Clean test set
-
+```bash
 python eval_thickness_shift.py \
     --csv-path split_outputs/copper_xray_all_splits.csv \
     --data-root /path/to/dataset \
@@ -135,10 +135,10 @@ python eval_thickness_shift.py \
     --img-size 192 \
     --delta-list 0.0 \
     --apply-p 1.0
-    
+``` 
 Thickness shift robustness scan
 Fixed shift intensities: δ ∈ {‑0.25, ‑0.15, ‑0.05, 0, 0.05, 0.15, 0.25}
-
+```bash
 python eval_thickness_shift.py \
     --csv-path split_outputs/copper_xray_all_splits.csv \
     --data-root /path/to/dataset \
@@ -148,10 +148,10 @@ python eval_thickness_shift.py \
     --img-size 192 \
     --delta-list -0.25,-0.15,-0.05,0.0,0.05,0.15,0.25 \
     --apply-p 1.0
-    
+```   
 5. Swin Transformer (Architectural Generalizability)
 Train Swin‑T with the proposed consistency regularization (learning rate 1e-4, consistent with the paper):
-
+```bash
 python train_swin_consistency.py \
     --csv-path split_outputs/copper_xray_all_splits.csv \
     --data-root /path/to/dataset \
@@ -164,9 +164,9 @@ python train_swin_consistency.py \
     --log-dir logs/swin_consistency \
     --ckpt-path checkpoints/swin_consistency.pth \
     --seed 0
-    
+ ```     
 Evaluate Swin‑T under thickness shifts:
-
+```bash
 python eval_swin_thickness_shift.py \
     --csv-path split_outputs/copper_xray_all_splits.csv \
     --data-root /path/to/dataset \
@@ -175,7 +175,7 @@ python eval_swin_thickness_shift.py \
     --out-dir eval_results \
     --img-size 224 \
     --delta-list -0.25,-0.15,-0.05,0.0,0.05,0.15,0.25
-    
+ ``` 
 For multi‑seed experiments (5 seeds), you can use the provided batch script:
 ```bash
 bash run_swin_5seeds.sh
