@@ -212,11 +212,14 @@ If you find this code useful for your research, please cite our paper:
   journal={Computers \& Geosciences},
   year={2026}
 }
-
-## 📧  Contact
-For questions or issues, please contact the corresponding author:
-Jianfeng He – hjf_10@yeah.net
-
-## 📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.
 ```
+
+## Contact
+
+For questions or issues, please contact the corresponding author:  
+**Jianfeng He** – hjf_10@yeah.net
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
