@@ -183,7 +183,7 @@ bash run_swin_5seeds.sh
 ```
 
 ## 📁 Repository Structure
-```bash
+```text
 ├── copper_dataset_split.py # CSV generation with thickness groups
 ├── copper_xray_dataset.py # PyTorch Dataset with thickness/brightness augmentations
 ├── train_resnet_brightness_control.py # Baseline + brightness augmentation
@@ -213,9 +213,10 @@ If you find this code useful for your research, please cite our paper:
   year={2026}
 }
 
-📧  Contact
+## 📧  Contact
 For questions or issues, please contact the corresponding author:
 Jianfeng He – hjf_10@yeah.net
 
-📄 License
+## 📄 License
 This project is licensed under the MIT License - see the LICENSE file for details.
+```
