@@ -52,6 +52,9 @@ dataset_root/
     └── low/
 ```
 Generate CSV splits and thickness group annotations:
+**❗ This step is required before running any training/evaluation commands.**
+```bash
+python copper_dataset_split.py --root /path/to/dataset --output-dir split_outputs
 
 ```bash
 python copper_dataset_split.py --root /path/to/dataset --output-dir split_outputs
