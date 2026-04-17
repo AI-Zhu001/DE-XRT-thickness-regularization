@@ -175,8 +175,47 @@ python eval_swin_thickness_shift.py \
     --out-dir eval_results \
     --img-size 224 \
     --delta-list -0.25,-0.15,-0.05,0.0,0.05,0.15,0.25
- ``` 
+ ```
+
 For multi‑seed experiments (5 seeds), you can use the provided batch script:
 ```bash
 bash run_swin_5seeds.sh
 ```
+
+## 📁 Repository Structure
+```bash
+├── copper_dataset_split.py # CSV generation with thickness groups
+├── copper_xray_dataset.py # PyTorch Dataset with thickness/brightness augmentations
+├── train_resnet_brightness_control.py # Baseline + brightness augmentation
+├── train_resnet_consistency.py # Proposed thickness consistency regularization (ResNet18)
+├── train_swin_consistency.py # Swin‑Transformer + consistency (generalizability)
+├── eval_thickness_shift.py # Evaluate ResNet18 under thickness shifts
+├── eval_swin_thickness_shift.py # Evaluate Swin‑T under thickness shifts
+├── eval_brightness_shift.py # Evaluate brightness‑control models (optional)
+├── final_collect_plots.py # Generate summary tables and plots
+├── plot_shift_summary_auto.py # Plot Macro‑F1 and worst‑group accuracy curves
+├── run_swin_5seeds.sh # Batch training script for Swin (5 seeds)
+├── requirements.txt # Python dependencies
+├── LICENSE # MIT License
+└── README.md # This file
+```
+> **Note**: Files such as `train_resnet_thickness.py` and `train_resnet_hybrid_curriculum.py` were used in preliminary experiments and are not required for reproducing the final results reported in the paper.
+
+## 📜 Citation
+
+If you find this code useful for your research, please cite our paper:
+
+```bibtex
+@article{Zhu2026Thickness,
+  title={Enhancing Robustness of Copper Ore Sorting in DE-XRT Imaging Through Physically-Informed Thickness-Consistency Regularization},
+  author={Zhu, Zhi-yong and He, Jian-feng and Wang, Xue-yuan and Nie, Feng-jun and Wang, Wen and Zou, Yang-hui and Li, Wei-dong and Zhong, Guo-yun and Ye, Zhi-Xiang and Diao, Fan},
+  journal={Computers \& Geosciences},
+  year={2026}
+}
+
+📧  Contact
+For questions or issues, please contact the corresponding author:
+Jianfeng He – hjf_10@yeah.net
+
+📄 License
+This project is licensed under the MIT License - see the LICENSE file for details.
